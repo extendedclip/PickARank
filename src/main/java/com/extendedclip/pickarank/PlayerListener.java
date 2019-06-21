@@ -26,15 +26,20 @@ public class PlayerListener implements Listener {
 	public void onJoin(PlayerJoinEvent e) {
 		Player p = e.getPlayer();
 		if (p.hasPermission("pickarank.open")) {
-			Menu m = new Menu(plugin, p);
-			p.openInventory(m.getInventory());
+		  Bukkit.getScheduler().runTaskLater(plugin, new Runnable() {
+		    @Override
+        public void run() {
+          Menu m = new Menu(plugin, p);
+          p.openInventory(m.getInventory());
+        }
+      }, 20L);
 		}
 	}
 
 	@EventHandler(priority = EventPriority.HIGH)
 	public void onClose(InventoryCloseEvent e) {
 		
-		final Inventory inventory = e.getInventory();
+		Inventory inventory = e.getInventory();
 		
 		if (!(e.getPlayer() instanceof Player)) {
 			return;
@@ -94,7 +99,6 @@ public class PlayerListener implements Listener {
 		}
 
 		i.getClickHandler().onClick(p);
-
 		return;		
 	}
 
