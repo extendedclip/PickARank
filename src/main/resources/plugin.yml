@@ -1,0 +1,17 @@
+name: ${project.name}
+version: ${project.version}
+main: com.extendedclip.pickarank.PickARank
+api-version: 1.13
+depend: [PlaceholderAPI]
+authors: [clip]
+description: Force new players to pick a rank on join through a Menu
+commands:
+  pickarank:
+    description: PickARank admin commands
+permissions:
+  pickarank.admin:
+    description: ability to use admin commands
+    default: op
+  pickarank.close:
+    description: ability to close the pickarank menu on first join
+    default: op
