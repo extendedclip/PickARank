@@ -12,6 +12,6 @@ permissions:
   pickarank.admin:
     description: ability to use admin commands
     default: op
-  pickarank.close:
-    description: ability to close the pickarank menu on first join
+  pickarank.open:
+    description: always forces a pickarank menu to be opened and can not be closed on join
     default: op
