@@ -13,10 +13,10 @@ public class Menu implements InventoryHolder {
 	private String name;
 	private int slots;
 		
-	public Menu(Player p) {
+	public Menu(PickARank plugin, Player p) {
 		this.p = p;
-		this.name = PlaceholderAPI.setPlaceholders(p, PickARank.getInstance().getSettings().getMenuName());
-		this.slots = PickARank.getInstance().getSettings().getMenuSize();
+		this.name = PlaceholderAPI.setPlaceholders(p, plugin.getSettings().getMenuName());
+		this.slots = plugin.getSettings().getMenuSize();
 	}
 
 	@Override

@@ -26,7 +26,7 @@ public class PlayerListener implements Listener {
 	public void onJoin(PlayerJoinEvent e) {
 		Player p = e.getPlayer();
 		if (p.hasPermission("pickarank.open")) {
-			Menu m = new Menu(p);
+			Menu m = new Menu(plugin, p);
 			p.openInventory(m.getInventory());
 		}
 	}
@@ -52,7 +52,7 @@ public class PlayerListener implements Listener {
 			
 		final String name = p.getName();
 			
-			Bukkit.getScheduler().runTaskLater(PickARank.getInstance(), new Runnable() {
+			Bukkit.getScheduler().runTaskLater(plugin, new Runnable() {
 
 				@Override
 				public void run() {

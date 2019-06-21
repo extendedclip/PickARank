@@ -64,7 +64,7 @@ public class Commands implements CommandExecutor {
 				return true;
 			}
 			
-			target.openInventory(new Menu(target).getInventory());
+			target.openInventory(new Menu(plugin, target).getInventory());
 			sms(s, target.getName() + " &ahas been set in the PickARank menu!");
 			return true;
 		} else if (args[0].equalsIgnoreCase("reload")) {
@@ -91,7 +91,7 @@ public class Commands implements CommandExecutor {
 				for (String p : playersInMenu) {
 					Player in = Bukkit.getPlayer(p);
 					if (in != null) {
-						in.openInventory(new Menu(in).getInventory());
+						in.openInventory(new Menu(plugin, in).getInventory());
 					}
 				}
 			}
